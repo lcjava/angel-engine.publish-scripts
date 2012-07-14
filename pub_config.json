@@ -1,0 +1,95 @@
+{
+	"repository":"http://angel-engine.googlecode.com/svn/trunk/",
+	
+	"base_name":"Angel-",
+	"output_dir_name":"up",
+	"doc_base_name":"AngelDocs_",
+	"angel_path":"Code/Angel",
+	"doc_output":"angel-doc-exp",
+	"doc_ignore_paths": [
+		"Libraries/"
+	],
+	"doc_data_path":"Code/Tools/BuildScripts/Doc/",
+	"local_doc_data_path":"Tools/BuildScripts/Doc/",
+	"doxygen_replacements":
+	{
+		"doxygen.sty":
+		{
+			"orig":"Generated on",
+			"new":"Angel licensed under a \\href{http://creativecommons.org/licenses/BSD/}{BSD-style license}; Documentation licensed under \\href{http://creativecommons.org/licenses/by-sa/3.0/us/}{Creative Commons Attribution-Share Alike 3.0 United States License}; Generated on"
+		}
+	},
+	"doc_pdf_output_name":"AngelDocumentation.pdf",
+	"doc_html_output_name":"AngelDocumentation.html",
+	"doc_hosted_html_output_name":"docs_for_upload",
+	"doc_html_contents":"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><title>Angel Documentation</title><meta http-equiv=\"REFRESH\" content=\"0;url=./html/index.html\"></head><body>Redirecting...</body></html>",
+	"doc_hosted_html_replacements": {
+		"GENERATE_LATEX         = YES": "GENERATE_LATEX = NO",
+		"../Tools/BuildScripts/Doc/footer.html": "../Tools/BuildScripts/Doc/footer_host.html"
+	},
+	"doc_html_replacements": {},
+	
+	"distros": {
+		"windows": {
+			"deletions": [
+				"Code/GameJam-Mac.xcodeproj",
+				"Code/GameJam-iOS.xcodeproj",
+				"Code/README.Linux",
+				"Code/Angel/nix-prereqs.sh",
+				"Code/Angel/Libraries/angel-lua-build",
+				"Code/Angel/Libraries/FMOD/lib/*.so*",
+				"Code/Angel/Libraries/FMOD/*.dylib",
+				"Code/Angel/Libraries/HID Utilities",
+				"Code/Angel/Libraries/DevIL-SDK-1.7.8/mac",
+				"Code/Angel/iOS",
+				"Code/Tools/BuildScripts/Doc",
+				"Code/Tools/BuildScripts/mac-specific",
+				"Code/Tools/BuildScripts/publish_mac.lua",
+				"Code/Tools/Mac360",
+				"Code/IntroGame/Makefile",
+				"Code/IntroGame/IntroGameInfo.plist",
+				"Code/IntroGame/ios",
+				"Code/ClientGame/Makefile",
+				"Code/ClientGame/ClientGameInfo.plist",
+				"Code/ClientGame/ios"
+			]
+		},
+		"mac": {
+			"deletions": [
+				"Code/GameJam.sln",
+				"Code/README.Linux",
+				"Code/Angel/Libraries/angel-lua-build",
+				"Code/Angel/Libraries/FMOD/*.dll",
+				"Code/Angel/Libraries/FMOD/lib/*.so*",
+				"Code/Angel/Libraries/FMOD/lib/",
+				"Code/Angel/Libraries/DevIL-SDK-1.7.8/win",
+				"Code/Tools/BuildScripts/publish.lua",
+				"Code/Tools/swigwin-2.0.2",
+				"Code/IntroGame/Makefile",
+				"Code/IntroGame/IntroGame.vcproj",
+				"Code/ClientGame/Makefile",
+				"Code/ClientGame/ClientGame.vcproj"
+			]
+		},
+		"linux": {
+			"deletions": [
+				"Code/GameJam.sln",
+				"Code/GameJam.xcodeproj",
+				"Code/Angel/Libraries/freetype-2.3.7",
+				"Code/Angel/Libraries/FMOD/lib/*.lib",
+				"Code/Angel/Libraries/FMOD/*.dll",
+				"Code/Angel/Libraries/FMOD/*.dylib",
+				"Code/Angel/Libraries/HID Utilities",
+				"Code/Angel/Libraries/DevIL-SDK-1.7.8",
+				"Code/Tools/BuildScripts/mac-specific",
+				"Code/Tools/BuildScripts/publish.lua",
+				"Code/Tools/BuildScripts/publish_mac.lua",
+				"Code/Tools/swigwin-2.0.2",
+				"Code/IntroGame/IntroGame.vcproj",
+				"Code/IntroGame/IntroGameInfo.plist",
+				"Code/ClientGame/ClientGame.vcproj",
+				"Code/ClientGame/ClientGameInfo.plist"
+			]
+		}
+	}
+}

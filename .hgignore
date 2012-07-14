@@ -1,0 +1,6 @@
+syntax: glob
+
+AngelDocs*
+Angel-*
+docs_for_upload
+
