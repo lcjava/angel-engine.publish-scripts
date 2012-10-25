@@ -6,7 +6,8 @@
 	
 	int bigFontSize = 0;
 	int littleFontSize = 0;
-	if (theCamera.GetWindowWidth() == 480)
+	int camWidth = theCamera.GetWindowWidth();
+	if (camWidth == 960 || camWidth == 1136)
 	{
 		//iphone
 		bigFontSize = 36;
