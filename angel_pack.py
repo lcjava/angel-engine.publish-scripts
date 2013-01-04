@@ -32,7 +32,8 @@ REPO = config["repository"]
 
 # get a clean version of the latest code
 print "Exporting code..."
-do_quietly(['svn', 'export', REPO, FILENAME])
+do_quietly(['hg', 'clone', REPO, FILENAME])
+do_quietly(['rm', '-rf', os.path.join(FILENAME, ".hg")])
 
 # make changes for various distros
 # print "Setting up distributions..."
@@ -58,15 +59,17 @@ do_quietly(['svn', 'export', REPO, FILENAME])
 print "\tFull Distro:"
 print "\t\tZipping..."
 do_quietly(['zip', '-r9', FILENAME + ".zip", FILENAME])
+if not os.path.exists(config["output_dir_name"]):
+	os.mkdir(config["output_dir_name"])
 do_quietly(['mv', FILENAME + ".zip", os.path.join(config["output_dir_name"], FILENAME + ".zip")])
 print "\t\tBuilding IntroGame..."
 os.chdir(os.path.join(FILENAME, "Code"))
-do_quietly(['xcodebuild', '-project', 'GameJam-Mac.xcodeproj'])
-os.chdir("Published")
+do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
+os.chdir("IntroGame/Published")
 zipName = FILENAME + "-IntroGame-Mac.zip"
 do_quietly(['zip', '-r9', zipName, "IntroGame"])
-do_quietly(['mv', zipName, os.path.join("..", "..", "..", config["output_dir_name"], zipName)])
-os.chdir(os.path.join("..", "..", ".."))
+do_quietly(['mv', zipName, os.path.join("..", "..", "..", "..", config["output_dir_name"], zipName)])
+os.chdir(os.path.join("..", "..", "..", ".."))
 print "\t\tCleaning..."
 do_quietly(['rm', '-rf', FILENAME])
 
