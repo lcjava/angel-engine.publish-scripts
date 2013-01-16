@@ -6,6 +6,7 @@ import subprocess
 import time
 import json
 import math
+import markowik
 
 if (sys.platform[:3] == 'win'):
     timer = time.clock
@@ -28,9 +29,10 @@ config_data_file = open(DISTRO_CONFIG_FILENAME, "r")
 config_data = config_data_file.read()
 config_data_file.close()
 config = json.loads(config_data)
+FILENAME = "%s%s" % (config["base_name"], sys.argv[1])
+DOCS_FILENAME = "%s%s" % (config["doc_base_name"], sys.argv[1])
 ANGEL_PATH = config["angel_path"]
 REPO = config["repository"]
-OUTPUT = config["doc_output"]
 IGNORE = config["doc_ignore_paths"]
 PATH_TO_DOC = config["doc_data_path"]
 LOCAL_PATH_TO_DOC = config["local_doc_data_path"]
@@ -41,24 +43,57 @@ LOCAL_PATH_TO_DOC = config["local_doc_data_path"]
 if not os.path.exists(config["output_dir_name"]):
     do_quietly(['mkdir', config["output_dir_name"]])
 
-# sync, but we only want the Angel directory minus "Libraries"
-print "Exporting docs..."
-do_quietly(['svn', 'export', '-N', REPO + ANGEL_PATH, OUTPUT])
-dirs = get_quietly(['svn', 'ls', REPO + ANGEL_PATH]).split()
-for directory in dirs:
-    if (directory[-1] != "/"):
-        continue
-    if directory in IGNORE:
-        continue
-    do_quietly(['svn', 'export', REPO + ANGEL_PATH + "/" + directory, OUTPUT + "/" + directory])
+if not os.path.exists(FILENAME):
+    print "Exporting code..."
+    do_quietly(['hg', 'clone', REPO, FILENAME])
+    # do_quietly(['rm', '-rf', os.path.join(FILENAME, ".hg")])
 
-# My lord, this is ignorant. This is just my local "build docs", script, 
-#  though, so damn the torpedoes. 
-do_quietly(['svn', 'export', REPO + PATH_TO_DOC, LOCAL_PATH_TO_DOC])
+# create front page for Google Code page
+with open(os.path.join(FILENAME, "Code", "README.txt"), 'r') as readme_file: markdown_text = readme_file.read()
 
-# # generate docs
+insertion_marker = """
+
+Getting Started
+---------------"""
+
+downloads_text = """
+
+Downloads
+---------
+* **[http://angel-engine.googlecode.com/files/Angel-%s.zip Angel %s]**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
+* **[http://angel-engine.googlecode.com/files/AngelDocs_%sa.zip Angel Documentation]**: The generated documentation from the 3.0 codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
+* **IntroGame**: Compiled versions of the example code, which shows off basic functionality. All the code is well-commented and modular, so you can download the source (above) and see how each example is implemented.
+    * [http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Windows.zip Windows IntroGame]
+    * [http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Mac.zip Mac IntroGame]"""
+downloads_text = downloads_text % (sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1])
+
+screenshots_text = """
+
+Screenshots
+-----------
+Some screenshots of the demo application."""
+for shot_type in ["Console", "Intervals", "Multitouch", "Particles", "Pathfinding"]:
+    screenshots_text += "\n\n*%s*\n\n[http://wiki.angel-engine.googlecode.com/hg/images/%s.png http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png]" % (shot_type, shot_type.lower(), shot_type.lower())
+
+markdown_text = markdown_text.replace(insertion_marker, screenshots_text + downloads_text + insertion_marker)
+
+google_code_text = markowik.convert(markdown_text)
+output_file = open(os.path.join(config["output_dir_name"], "google_front_page.txt"), 'w')
+output_file.write(google_code_text)
+output_file.close()
+
+# generate docs
 print "Generating documentation package..."
-os.chdir(OUTPUT)
+os.chdir(os.path.join(FILENAME, "Code", "Angel"))
+
+dox = open("Doxyfile", "r")
+dox_text = dox.read()
+dox.close()
+dox_text = dox_text.replace("PROJECT_NAME           = Angel\n", "PROJECT_NAME           = \"Angel " + sys.argv[1] + "\"\n")
+dox = open("Doxyfile", "w")
+dox.write(dox_text)
+dox.close()
+
 do_quietly(['doxygen'])
 
 # add license information to PDF output
@@ -100,13 +135,14 @@ for filePath, repls in replacements.iteritems():
 
 # switcheroo and zip
 os.chdir("..")
-filename = config["doc_base_name"] + sys.argv[1]
-do_quietly(['mv', 'docs', filename])
-do_quietly(['zip', '-r9', filename + ".zip", filename])
-do_quietly(['mv', filename + ".zip", os.path.join('../', config["output_dir_name"], filename + ".zip")])
+do_quietly(['mv', 'docs', os.path.join("..", "..", "..", DOCS_FILENAME)])
+os.chdir(os.path.join("..", "..", ".."))
+do_quietly(['zip', '-r9', DOCS_FILENAME + ".zip", DOCS_FILENAME])
+do_quietly(['mv', DOCS_FILENAME + ".zip", os.path.join(config["output_dir_name"], DOCS_FILENAME + ".zip")])
 
 # generate HTML documenation for upload
 print "Generating the hosted documentation..."
+os.chdir(os.path.join(FILENAME, "Code", "Angel"))
 dox = open("Doxyfile", "r")
 dox_text = dox.read()
 dox.close()
@@ -129,15 +165,7 @@ for filePath, repls in replacements.iteritems():
     rawFile = open(os.path.join('docs/html', filePath), "w")
     rawFile.write(text)
     rawFile.close()
-do_quietly(['mv', 'docs/html', os.path.join('..', config["output_dir_name"], config["doc_hosted_html_output_name"])])
-
-# cleanup
-print "Cleaning up documentation..."
-os.chdir("..")
-do_quietly(['rm', '-rf', config["doc_output"]])
-
-# Cleaning up the ignorance
-do_quietly(['rm', '-rf', config['local_doc_data_path'].split('/')[0]])
+do_quietly(['mv', 'docs/html', os.path.join('..', '..', '..', config["output_dir_name"], config["doc_hosted_html_output_name"])])
 
 # script timer
 finish = timer()

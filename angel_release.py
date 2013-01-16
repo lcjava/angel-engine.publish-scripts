@@ -2,7 +2,7 @@
 
 import sys
 
-scripts = ["angel_doc", "angel_pack"]
+scripts = ["angel_pack", "angel_doc"]
 
 if len(sys.argv) < 2:
   print "Pass me a version number, yo."

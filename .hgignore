@@ -3,4 +3,6 @@ syntax: glob
 AngelDocs*
 Angel-*
 docs_for_upload
-
+*.pyc
+.DS_Store
+up
