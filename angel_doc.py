@@ -154,7 +154,6 @@ dox.write(dox_text)
 dox.close()
 do_quietly(['doxygen'])
 replacements = config["doc_html_replacements"]
-print(os.getcwd())
 for filePath, repls in replacements.iteritems():
     rawFile = open(os.path.join('docs/html', filePath), "r")
     text = rawFile.read()
