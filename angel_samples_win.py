@@ -37,7 +37,7 @@ REPO = config["repository"]
 OUTPUT_DIR = "Angel-%s-Samples-Windows" % (sys.argv[1])
 VS_DIR = r"C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin"
 START_DIR = os.getcwd()
-SAMPLE_BRANCHES = ["samples-1"]
+SAMPLE_BRANCHES = ["samples-1", "samples-2"]
 
 
 if not os.path.exists('windows-angel'):

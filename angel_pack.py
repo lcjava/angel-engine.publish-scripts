@@ -60,8 +60,10 @@ if not os.path.exists(FILENAME):
 print "\tFull Distro:"
 print "\t\tZipping..."
 shutil.move(os.path.join(FILENAME, ".hg"), "TEMPHG")
+shutil.move(os.path.join(FILENAME, ".hgtags"), "TEMPHGTAGS")
 do_quietly(['zip', '-r9', FILENAME + ".zip", FILENAME])
 shutil.move("TEMPHG", os.path.join(FILENAME, ".hg"))
+shutil.move("TEMPHGTAGS", os.path.join(FILENAME, ".hgtags"))
 if not os.path.exists(config["output_dir_name"]):
     os.mkdir(config["output_dir_name"])
 do_quietly(['mv', FILENAME + ".zip", os.path.join(config["output_dir_name"], FILENAME + ".zip")])
