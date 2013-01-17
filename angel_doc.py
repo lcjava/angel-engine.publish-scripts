@@ -60,12 +60,12 @@ downloads_text = """
 
 Downloads
 ---------
-* **[http://angel-engine.googlecode.com/files/Angel-%s.zip Angel %s]**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
-* **[http://angel-engine.googlecode.com/files/AngelDocs_%sa.zip Angel Documentation]**: The generated documentation from the 3.0 codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
+* **[Angel %s](http://angel-engine.googlecode.com/files/Angel-%s.zip)**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
+* **[Angel Documentation](http://angel-engine.googlecode.com/files/AngelDocs_%s.zip)**: The generated documentation from the %s codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
 * **IntroGame**: Compiled versions of the example code, which shows off basic functionality. All the code is well-commented and modular, so you can download the source (above) and see how each example is implemented.
-    * [http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Windows.zip Windows IntroGame]
-    * [http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Mac.zip Mac IntroGame]"""
-downloads_text = downloads_text % (sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1])
+    * [Windows IntroGame](http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Windows.zip)
+    * [Mac IntroGame](http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Mac.zip)"""
+downloads_text = downloads_text % (sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1])
 
 screenshots_text = """
 
@@ -73,13 +73,14 @@ Screenshots
 -----------
 Some screenshots of the demo application."""
 for shot_type in ["Console", "Intervals", "Multitouch", "Particles", "Pathfinding"]:
-    screenshots_text += "\n\n*%s*\n\n[http://wiki.angel-engine.googlecode.com/hg/images/%s.png http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png]" % (shot_type, shot_type.lower(), shot_type.lower())
+    screenshots_text += "\n\n**%s**\n\n[![%s](http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png)](http://wiki.angel-engine.googlecode.com/hg/images/%s.png)]" % (shot_type, shot_type, shot_type.lower(), shot_type.lower())
 
 markdown_text = markdown_text.replace(insertion_marker, screenshots_text + downloads_text + insertion_marker)
 
 google_code_text = markowik.convert(markdown_text)
 output_file = open(os.path.join(config["output_dir_name"], "google_front_page.txt"), 'w')
 output_file.write(google_code_text)
+# output_file.write(markdown_text)
 output_file.close()
 
 # generate docs

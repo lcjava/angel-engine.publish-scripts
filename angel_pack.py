@@ -6,6 +6,7 @@ import subprocess
 import time
 import math
 import json
+import shutil
 
 if (sys.platform[:3] == 'win'):
     timer = time.clock
@@ -34,7 +35,6 @@ REPO = config["repository"]
 if not os.path.exists(FILENAME):
     print "Exporting code..."
     do_quietly(['hg', 'clone', REPO, FILENAME])
-    do_quietly(['rm', '-rf', os.path.join(FILENAME, ".hg")])
 
 # make changes for various distros
 # print "Setting up distributions..."
@@ -59,18 +59,12 @@ if not os.path.exists(FILENAME):
 # zip, clean up original
 print "\tFull Distro:"
 print "\t\tZipping..."
+shutil.move(os.path.join(FILENAME, ".hg"), "TEMPHG")
 do_quietly(['zip', '-r9', FILENAME + ".zip", FILENAME])
+shutil.move("TEMPHG", os.path.join(FILENAME, ".hg"))
 if not os.path.exists(config["output_dir_name"]):
     os.mkdir(config["output_dir_name"])
 do_quietly(['mv', FILENAME + ".zip", os.path.join(config["output_dir_name"], FILENAME + ".zip")])
-print "\t\tBuilding IntroGame..."
-os.chdir(os.path.join(FILENAME, "Code"))
-do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
-os.chdir("IntroGame/Published")
-zipName = FILENAME + "-IntroGame-Mac.zip"
-do_quietly(['zip', '-r9', zipName, "IntroGame"])
-do_quietly(['mv', zipName, os.path.join("..", "..", "..", "..", config["output_dir_name"], zipName)])
-os.chdir(os.path.join("..", "..", "..", ".."))
 
 # script timer
 finish = timer()
