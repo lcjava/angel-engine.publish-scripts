@@ -48,7 +48,9 @@ for dir_check in [UPLOAD_DIR, SAMPLES_DIR]:
         os.makedirs(dir_check)
 
 if not os.path.exists(SYNC_PATH):
+    print "Pulling latest repository...",
     do_quietly(['hg', 'clone', REPO, SYNC_PATH])
+    print "done."
 
 # build and grab IntroGame
 os.chdir(os.path.join(SYNC_PATH, "Code"))
@@ -56,6 +58,7 @@ do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'I
 shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", "..", SAMPLES_DIR, "IntroGame"))
 
 for sample in SAMPLE_BRANCHES:
+    print "Building", sample
     shutil.rmtree("ClientGame")
     do_quietly(['hg', 'revert', 'ClientGame'])
     do_quietly(['hg', 'up', sample])

@@ -41,7 +41,9 @@ SAMPLE_BRANCHES = ["samples-1", "samples-2"]
 
 
 if not os.path.exists('windows-angel'):
+    print "Pulling latest repository...",
     do_quietly(['hg', 'clone', REPO, 'windows-angel'])
+    print "done."
 
 if not os.path.exists(OUTPUT_DIR):
     os.mkdir(OUTPUT_DIR)
@@ -54,10 +56,10 @@ def zipdir(basedir, archivename):
                 zfn = absfn[len(basedir)+len(os.sep):]
                 z.write(absfn, zfn)
 
-# set up paths
-os.chdir(VS_DIR)
-os.system("vcvars32")
-os.chdir(START_DIR)
+## set up paths
+# os.chdir(VS_DIR)
+# os.system("vcvars32")
+# os.chdir(START_DIR)
 
 # build and grab IntroGame
 os.chdir(os.path.join("windows-angel", "Code"))
@@ -66,6 +68,7 @@ os.system("msbuild /nologo /p:Configuration=Release")
 shutil.move(os.path.join("IntroGame", "Published"), os.path.join("..", "..", OUTPUT_DIR, "IntroGame"))
 
 for sample in SAMPLE_BRANCHES:
+    print "Building", sample
     shutil.rmtree("ClientGame")
     do_quietly(['hg', 'revert', 'ClientGame'])
     do_quietly(['hg', 'up', sample])
