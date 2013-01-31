@@ -49,7 +49,7 @@ if not os.path.exists(FILENAME):
     # do_quietly(['rm', '-rf', os.path.join(FILENAME, ".hg")])
 
 # create front page for Google Code page
-with open(os.path.join(FILENAME, "Code", "README.txt"), 'r') as readme_file: markdown_text = readme_file.read()
+with open(os.path.join(FILENAME, "README.markdown"), 'r') as readme_file: markdown_text = readme_file.read()
 
 insertion_marker = """
 
@@ -85,7 +85,7 @@ output_file.close()
 
 # generate docs
 print "Generating documentation package..."
-os.chdir(os.path.join(FILENAME, "Code", "Angel"))
+os.chdir(os.path.join(FILENAME, "Angel"))
 
 dox = open("Doxyfile", "r")
 dox_text = dox.read()
@@ -143,7 +143,7 @@ do_quietly(['mv', DOCS_FILENAME + ".zip", os.path.join(config["output_dir_name"]
 
 # generate HTML documenation for upload
 print "Generating the hosted documentation..."
-os.chdir(os.path.join(FILENAME, "Code", "Angel"))
+os.chdir(os.path.join(FILENAME, "Angel"))
 dox = open("Doxyfile", "r")
 dox_text = dox.read()
 dox.close()

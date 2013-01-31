@@ -62,7 +62,7 @@ def zipdir(basedir, archivename):
 # os.chdir(START_DIR)
 
 # build and grab IntroGame
-os.chdir(os.path.join("windows-angel", "Code"))
+os.chdir(os.path.join("windows-angel"))
 os.system("msbuild /nologo /p:Configuration=Release")
 
 shutil.move(os.path.join("IntroGame", "Published"), os.path.join("..", "..", OUTPUT_DIR, "IntroGame"))

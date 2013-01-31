@@ -53,7 +53,7 @@ if not os.path.exists(SYNC_PATH):
     print "done."
 
 # build and grab IntroGame
-os.chdir(os.path.join(SYNC_PATH, "Code"))
+os.chdir(os.path.join(SYNC_PATH))
 do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
 shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", "..", SAMPLES_DIR, "IntroGame"))
 
