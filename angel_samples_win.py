@@ -65,7 +65,7 @@ def zipdir(basedir, archivename):
 os.chdir(os.path.join("windows-angel"))
 os.system("msbuild /nologo /p:Configuration=Release")
 
-shutil.move(os.path.join("IntroGame", "Published"), os.path.join("..", "..", OUTPUT_DIR, "IntroGame"))
+shutil.move(os.path.join("IntroGame", "Published"), os.path.join("..", OUTPUT_DIR, "IntroGame"))
 
 for sample in SAMPLE_BRANCHES:
     print "Building", sample
@@ -84,8 +84,8 @@ for sample in SAMPLE_BRANCHES:
     exe_name = exe_list[0] # we know there's only one
     exe_name = exe_name[:-4] # trim the ".exe"
     os.chdir(os.path.join("..", ".."))
-    shutil.move(os.path.join("ClientGame", "Published"), os.path.join("..", "..", OUTPUT_DIR, exe_name))
-    shutil.move("ClientGame.zip", os.path.join("..", "..", OUTPUT_DIR, exe_name, exe_name + "-source.zip"))
+    shutil.move(os.path.join("ClientGame", "Published"), os.path.join("..", OUTPUT_DIR, exe_name))
+    shutil.move("ClientGame.zip", os.path.join("..", OUTPUT_DIR, exe_name, exe_name + "-source.zip"))
 
 
 os.chdir(START_DIR)
