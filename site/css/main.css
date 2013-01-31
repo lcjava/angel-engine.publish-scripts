@@ -59,9 +59,10 @@ PAGE: HOMEPAGE (body#hp)
 #hp #content {float:left; width:570px; overflow:hidden;}
 #hp #aside {float:right; width:330px; overflow:hidden;}
 #welcome {position:relative; height:380px; overflow:hidden; background:url("../design/welcome.png") 0 0 no-repeat;}
+#welcome #header-img {position:absolute; top:20px; right:60px; /*width:398px; height:330px;*/ overflow:hidden; }
 #welcome #welcome-inner {position:absolute; top:0; left:0; width:515px; padding:45px 0 0 0;}
 #welcome #welcome-inner h2 {margin:0; font-size:260%; line-height:1.1; letter-spacing:-1px;}
-#welcome #welcome-inset {position:absolute; top:255px; left:0; width:600px; font-size:90%;}
+#welcome #welcome-inset {position:absolute; top:255px; left:0; width:515px; font-size:90%;}
 #welcome #welcome-inset p {margin:50px 0 0 75px; list-style:none;}
 #welcome #welcome-inset img {margin:35px 20px 0 30px; float: left;}
 .products {margin:15px 0; list-style:none;}
