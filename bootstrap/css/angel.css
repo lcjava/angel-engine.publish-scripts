@@ -15,5 +15,40 @@ header .logo {
   margin-left: 1em;
 }
 
+.hero-unit {
+  width: 100%;
+}
 
+.hero-image {
+  float: right;
+  max-height: 25em;
+}
 
+.feature-image {
+  float: left;
+  margin-right: 20px;
+  margin-left: -10px;
+}
+
+.feature-list li {
+  margin-bottom: 1em;
+}
+
+.section-label {
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.downloads p {
+  font-size: 110%;
+  text-align: center;
+}
+
+.goal-header {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.project-goal {
+  margin-top: 1em;
+}

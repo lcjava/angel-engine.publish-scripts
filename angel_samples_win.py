@@ -35,7 +35,6 @@ config = json.loads(config_data)
 REPO = config["repository"]
 
 OUTPUT_DIR = "Angel-%s-Samples-Windows" % (sys.argv[1])
-VS_DIR = r"C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin"
 START_DIR = os.getcwd()
 SAMPLE_BRANCHES = ["samples-1", "samples-2"]
 
@@ -56,10 +55,6 @@ def zipdir(basedir, archivename):
                 zfn = absfn[len(basedir)+len(os.sep):]
                 z.write(absfn, zfn)
 
-## set up paths
-# os.chdir(VS_DIR)
-# os.system("vcvars32")
-# os.chdir(START_DIR)
 
 # build and grab IntroGame
 os.chdir(os.path.join("windows-angel"))

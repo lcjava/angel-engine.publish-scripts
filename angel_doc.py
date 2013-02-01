@@ -136,8 +136,8 @@ for filePath, repls in replacements.iteritems():
 
 # switcheroo and zip
 os.chdir("..")
-do_quietly(['mv', 'docs', os.path.join("..", "..", "..", DOCS_FILENAME)])
-os.chdir(os.path.join("..", "..", ".."))
+do_quietly(['mv', 'docs', os.path.join("..", "..", DOCS_FILENAME)])
+os.chdir(os.path.join("..", ".."))
 do_quietly(['zip', '-r9', DOCS_FILENAME + ".zip", DOCS_FILENAME])
 do_quietly(['mv', DOCS_FILENAME + ".zip", os.path.join(config["output_dir_name"], DOCS_FILENAME + ".zip")])
 
@@ -165,7 +165,7 @@ for filePath, repls in replacements.iteritems():
     rawFile = open(os.path.join('docs/html', filePath), "w")
     rawFile.write(text)
     rawFile.close()
-do_quietly(['mv', 'docs/html', os.path.join('..', '..', '..', config["output_dir_name"], config["doc_hosted_html_output_name"])])
+do_quietly(['mv', 'docs/html', os.path.join('..', '..', config["output_dir_name"], config["doc_hosted_html_output_name"])])
 
 # script timer
 finish = timer()

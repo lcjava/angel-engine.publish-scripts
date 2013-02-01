@@ -55,7 +55,7 @@ if not os.path.exists(SYNC_PATH):
 # build and grab IntroGame
 os.chdir(os.path.join(SYNC_PATH))
 do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
-shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", "..", SAMPLES_DIR, "IntroGame"))
+shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", SAMPLES_DIR, "IntroGame"))
 
 for sample in SAMPLE_BRANCHES:
     print "Building", sample
@@ -73,8 +73,8 @@ for sample in SAMPLE_BRANCHES:
     if '.DS_Store' in app_list: 
         app_list.remove('.DS_Store')
     app_name = app_list[0]
-    shutil.move(os.path.join("ClientGame", "Published", app_name), os.path.join("..", "..", SAMPLES_DIR, app_name))
-    shutil.move("ClientGame.zip", os.path.join("..", "..", SAMPLES_DIR, app_name, app_name + "-source.zip"))
+    shutil.move(os.path.join("ClientGame", "Published", app_name), os.path.join("..", SAMPLES_DIR, app_name))
+    shutil.move("ClientGame.zip", os.path.join("..", SAMPLES_DIR, app_name, app_name + "-source.zip"))
 
 
 os.chdir(START_DIR)

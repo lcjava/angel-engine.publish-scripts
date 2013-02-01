@@ -12,17 +12,21 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/gh-fork-ribbon.css" />
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css" />
+        <![endif]-->
         <link rel="stylesheet" href="css/angel.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="http://10.0.17.221:35729/livereload.js?snipver=1"></script>
+        <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <div class="github-fork-ribbon-wrapper right">
+            <div class="github-fork-ribbon">
+                <a href="https://github.com/simonwhitaker/github-fork-ribbon-css">Fork me on GitHub</a>
+            </div>
+        </div>
 
         <header class="header">
                 <div class="row">
@@ -37,38 +41,101 @@
                 </div>
         </header>
 
+            <div class="hero-unit">
+                <div class="row">
+                    <div class="span5 offset1">
+                        <h3>A cross-platform 2D game prototyping framework based on OpenGL and C++</h3>
+                        <p>Angel balances the speed and flexibility of native code with an eye towards rapid iteration and out-of-the-box functionality. In a world of web games and memory-managed scripting engines, sometimes you still want to get your hands dirty &mdash; but that doesn't mean you have to get stuck in the mud.</p>
+                    </div>
+                    <div class="span5">
+                        <img class="hero-image" src="../site/design/five-minute-logo.png"/>
+                    </div>
+                </div>
+            </div>
+
         <div class="container">
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-            </div>
-
-            <!-- Example row of columns -->
+            <!-- FEATURE SECTION 1 -->
             <div class="row">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                <div class="span4 offset1">
+                    <h2>Cross-Platform</h2>
+                    <img class="feature-image" src="../site/design/platforms.png"/>
+                    <p>Angel can create games for <strong>Windows</strong>, the <strong>Mac</strong>, most flavors of <strong>Linux</strong>, and <strong>iOS</strong>. It uses the native build systems on each platform (Visual Studio, Xcode, Make), so you can be up and running as soon as possible.</p>
                 </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                <div class="span4 offset1">
+                    <h2>Helpful and Agile</h2>
+                    <ul class="feature-list">
+                        <li>Angel was created with game jams in mind, so it's focused on providing as many convenient features as possible, but in a quickly understandable way. </li>
+                        <li>This way you spend more time on making your game, and less time getting third-party libraries working.</li>
+                    </ul>
                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <!-- /FEATURE SECTION 1 -->
+
+            <hr/>
+
+            <!-- DOWNLOAD SECTION -->
+            <div class="downloads">
+                <div class="row">
+                    <div class="span11">
+                        <h2 class="section-label">Downloads</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 offset1">
+                        <a href="#"><img src="../site/design/zip-universal.png"/></a>
+                        <p>Angel 3.1 Source Code</p><p>(All Platforms)</p>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img src="../site/design/zip-universal.png"/></a>
+                        <p>Angel 3.1 Documentation</p><p>(PDF and HTML)</p>
+                    </div>
+                    <div class="span2 offset1">
+                        <a href="#"><img src="../site/design/zip-windows.png"/></a>
+                        <p>Angel 3.1 Windows Demos</p>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img src="../site/design/zip-mac.png"/></a>
+                        <p>Angel 3.1 Mac Demos</p>
+                    </div>
                 </div>
             </div>
+            <!-- /DOWNLOAD SECTION -->
 
-            <hr>
+            <hr/>
+
+            <!-- FEATURE SECTION 2 -->
+            <div class="row">
+                <div class="span5 offset1">
+                    <h3>Project Goals</h3>
+                    <ol class="project-goals">
+                        <li class="project-goal"><span class="goal-header">Provide all functionality in a quickly understandable way.</span>
+                            <ul>
+                                <li>We try to avoid overly complicated programming structures, even if that means sacrificing efficiency or, in some cases, functionality.</li>
+                                <li>As far down the stack as we can manage, the code is plainly written and thoroughly commented. We expect people to modify the core engine in the course of their work, so we've tried to make that a manageable thing.</li>
+                            </ul>
+                        </li>
+                        <li class="project-goal"><span class="goal-header">Provide as much functionality as possible.</span>
+                            <ul>
+                                <li>Angel was originally created (and is still used) as an engine for game jams, and the last thing you want to be doing in a jam context is debugging the pathfinding engine you had to cobble together.</li>
+                                <li>If there's something big you feel is missing from Angel, please send an email to the discussion group. We can't add every feature, obviously, but we want to at least make sure there's nothing we're forgetting.</li>
+                            </ul>
+                        </li>
+                        <li class="project-goal"><span class="goal-header">Allow an experienced developer to dive deeper.</span>
+                            <ul>
+                                <li>Given the first two points, we create a lot of wrappers around third-party libraries, but we always make it simple to access the raw capabilities of those libraries. So if you know what you're doing, you can be making direct OpenGL calls or manually affecting the Box2D physics simulation.</li>
+                                <li>In short, we strive to keep our code relatively shallow &mdash; it's always relatively easy to find the code doing the actual work, so you're not slugging through multiple levels of OO redirection.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /FEATURE SECTION 2 -->
+
+            <hr/>
 
             <footer>
-                <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013</p>
+                <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013; <a href="http://www.softicons.com/free-icons/system-icons/archives-icons-by-cgink/zip-silver-icon">Original ZIP icon</a> by cgink</p>
             </footer>
 
         </div> <!-- /container -->
