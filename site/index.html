@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="css/angel.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <!--<script src="http://localhost:35729/livereload.js?snipver=1"></script>-->
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=2"></' + 'script>')</script>
     </head>
     <body>
         <div class="github-fork-ribbon-wrapper right">
@@ -47,6 +47,7 @@
                     <div class="span5 offset1">
                         <h3>A cross-platform 2D game prototyping framework based on OpenGL and C++</h3>
                         <p>Angel balances the speed and flexibility of native code with an eye towards rapid iteration and out-of-the-box functionality. In a world of web games and memory-managed scripting engines, sometimes you still want to get your hands dirty &mdash; but that doesn't mean you have to get stuck in the mud.</p>
+                        <p><a href="#downloads" class="btn btn-primary btn-large">Download &raquo;</a></p>
                     </div>
                     <div class="span5">
                         <img class="hero-image" src="img/five-minute-logo.png"/>
@@ -77,27 +78,33 @@
 
             <!-- DOWNLOAD SECTION -->
             <div class="downloads">
+                <a id="downloads"></a>
                 <div class="row">
                     <div class="span11">
                         <h2 class="section-label">Downloads</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span2 offset1">
+                    <div class="download-link span2 offset1">
                         <a href="#"><img src="img/zip-universal.png"/></a>
                         <p>Angel 3.1 Source Code</p><p>(All Platforms)</p>
                     </div>
-                    <div class="span2">
+                    <div class="download-link span2">
                         <a href="#"><img src="img/zip-universal.png"/></a>
                         <p>Angel 3.1 Documentation</p><p>(PDF and HTML)</p>
                     </div>
-                    <div class="span2 offset1">
+                    <div class="download-link span2 offset1">
                         <a href="#"><img src="img/zip-windows.png"/></a>
                         <p>Angel 3.1 Windows Demos</p>
                     </div>
-                    <div class="span2">
+                    <div class="download-link span2">
                         <a href="#"><img src="img/zip-mac.png"/></a>
                         <p>Angel 3.1 Mac Demos</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p class="demo-spiel">The demo packs include a basic platformer, a nostalgic space-rock-shooting game, a pretty scene, and a copy of IntroGame, which shows off most engine features in a sequence of descriptive screens. All demos include their source code, so if you're curious about how to do something you see here, have a look!</p>
                     </div>
                 </div>
             </div>
@@ -130,7 +137,7 @@
                         </li>
                     </ol>
                 </div>
-                <div class="span5 angel-lightbox">
+                <div class="angel-lightbox span5">
                     <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/console.png" class="thumbnail">
                         <img src="img/console_t.png" />
                     </a>
@@ -141,23 +148,53 @@
                         <img src="img/particles_t.png" />
                     </a>
                 </div>
-                <div id="angel-lightbox-carousel" class="lightbox hide fade" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="lightbox-header">
-                        <button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="lightbox-content">
-                        <div id="angel-carousel" class="carousel slide">
-                            <div class="carousel-inner">
-                            </div>
-                            <a href="#angel-carousel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
-                            <a href="#angel-carousel" class="carousel-control right" data-slide="next">&rsaquo;</a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- /FEATURE SECTION 2 -->
 
             <hr/>
+
+            <!-- FEATURE SECTION  -->
+            <div class="row">
+                <div class="angel-lightbox span5 offset1">
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/intervals.png" class="thumbnail">
+                        <img src="img/intervals_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/multitouch.png" class="thumbnail">
+                        <img src="img/multitouch_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="http://placehold.it/1024x768" class="thumbnail">
+                        <img src="http://placehold.it/300x225" />
+                    </a>
+                </div>
+                <div class="span5">
+                    <h3>Simplicity</h3>
+                    <p>Out of the box, Angel sets up a basic OpenGL view and provides you with a suite of Actor classes which encapsulate various functionality. Physics, text rendering, camera controls, transformation intervals, sprite animations, and plenty more. When you build in Release mode, we even put together a folder with your executable and all necessary libraries and resources, perfect for zipping up and distributing.</p>
+                    <h3>Convenience through Scripting</h3>
+                    <p>There's a number of things that can be annoying to add to your game that help with development and make the eventual player's experience better, but aren't the sexy work that you want to be doing when you've got an idea burning you up.</p>
+                    <p>To that end, we have a tuning interface, a preferences system, and an in-game console, all driven through <a href="http://lua.org" target="_">Lua.</a> You can manipulate the world through the console, or write your own script files to run your game functionality. Lua sits as a thin layer on top of Angel, so whether you build your game mostly in script or in code is up to you!</p>
+                    <h3>Open</h3>
+                    <p>This is more than just being <a href="http://opensource.org/licenses/BSD-3-Clause" target="_">BSD-licensed</a>. Angel is designed as a framework that you build <strong>into</strong>, not just a standalone library that sits alongside you. It's extensible, and meant to be extended. Create your own Actor types, tweak the order in which the simulation loop runs updates, increase the update interval of the physics engine &mdash; whatever you need to do. Eventually <em>Angel becomes your game</em>.</p>
+                </div>
+            </div>
+            <!-- /FEATURE SECTION 3 -->
+
+            <hr/>
+
+            <!-- LIGHTBOX -->
+            <div id="angel-lightbox-carousel" class="lightbox hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="lightbox-header">
+                    <button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
+                </div>
+                <div class="lightbox-content">
+                    <div id="angel-carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                        </div>
+                        <a href="#angel-carousel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+                        <a href="#angel-carousel" class="carousel-control right" data-slide="next">&rsaquo;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /LIGHTBOX -->
 
             <footer>
                 <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013; <a href="http://www.softicons.com/free-icons/system-icons/archives-icons-by-cgink/zip-silver-icon">Original ZIP icon</a> by cgink</p>

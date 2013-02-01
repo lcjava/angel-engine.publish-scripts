@@ -57,8 +57,10 @@ os.chdir(os.path.join(SYNC_PATH))
 do_quietly(['hg', 'revert', '-Ca'])
 
 # build and grab IntroGame
+zipdir("IntroGame", "IntroGame.zip")
 do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
 shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", SAMPLES_DIR, "IntroGame"))
+shutil.move("IntroGame.zip", os.path.join("..", SAMPLES_DIR, "IntroGame", "IntroGame-source.zip"))
 
 for sample in SAMPLE_BRANCHES:
     print "Building", sample

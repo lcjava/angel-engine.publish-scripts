@@ -1,5 +1,6 @@
 {
 	"repository":"~/Projects/angel-engine",
+	"repository-windows":"C:\\Projects\\angel-engine",
 	
 	"base_name":"Angel-",
 	"output_dir_name":"up",

@@ -39,7 +39,7 @@ header .logo {
   margin-bottom: 0.75em;
 }
 
-.downloads p {
+.download-link p {
   font-size: 110%;
   text-align: center;
 }
@@ -56,4 +56,8 @@ header .logo {
 .thumbnail {
   border: none;
   margin-top: 0.75em;
+}
+
+.demo-spiel {
+  text-align: left;
 }

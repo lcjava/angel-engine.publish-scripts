@@ -32,7 +32,7 @@ config_data_file = open(DISTRO_CONFIG_FILENAME, "r")
 config_data = config_data_file.read()
 config_data_file.close()
 config = json.loads(config_data)
-REPO = config["repository"]
+REPO = config["repository-windows"]
 
 OUTPUT_DIR = "Angel-%s-Samples-Windows" % (sys.argv[1])
 START_DIR = os.getcwd()
@@ -58,9 +58,11 @@ def zipdir(basedir, archivename):
 
 # build and grab IntroGame
 os.chdir(os.path.join("windows-angel"))
+zipdir("IntroGame", "IntroGame.zip")
 os.system("msbuild /nologo /p:Configuration=Release")
 
 shutil.move(os.path.join("IntroGame", "Published"), os.path.join("..", OUTPUT_DIR, "IntroGame"))
+shutil.move("IntroGame.zip", os.path.join("..", OUTPUT_DIR, "IntroGame", "IntroGame-source.zip"))
 
 for sample in SAMPLE_BRANCHES:
     print "Building", sample
