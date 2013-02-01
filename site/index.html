@@ -1,161 +1,181 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- Free web templates by http://www.templatesdock.com; released for free under a Creative Commons Attribution 3.0 License -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta http-equiv="content-language" content="en" />
-	<meta name="description" content="[HERE PASTE YOUR DESCRIPTION]" />
-	<meta name="author" content="Template:TemplatesDock [www.templatesdock.com]; e-mail:hello@templatesdock.com" />
-	<link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
-	<link rel="stylesheet" media="screen,projection" type="text/css" href="css/nivo.css" />
-	<link rel="stylesheet" media="screen,projection" type="text/css" href="css/skin.css" />	
-	<!--[if IE 6]><script src="javascript/pngfix.js"></script><script>DD_belatedPNG.fix('#logo img, #nav li a, #nav li a span, #nav-icons img, #twitter, #imac');</script><![endif]--> 			
-	<script type="text/javascript" src="javascript/jquery.js"></script>
-	<script type="text/javascript" src="javascript/jquery.nivo.js"></script>
-	<script type="text/javascript" src="javascript/cufon-yui.js"></script>
-	<script type="text/javascript" src="javascript/font.font.js"></script>
-	<script type="text/javascript">
-	Cufon.replace('h1, h2', {hover:true});
-	</script>
-	<title>Bestfolio</title>
-</head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body id="hp"> <!-- APPLY CSS STYLES FOR HOMEPAGE -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/bootstrap-lightbox.min.css">
+        <link rel="stylesheet" href="css/gh-fork-ribbon.css" />
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css" />
+        <![endif]-->
+        <link rel="stylesheet" href="css/angel.css">
 
-<a href="https://github.com/sjml/angel-engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <!--<script src="http://localhost:35729/livereload.js?snipver=1"></script>-->
+    </head>
+    <body>
+        <div class="github-fork-ribbon-wrapper right">
+            <div class="github-fork-ribbon">
+                <a href="https://github.com/sjml/angel-engine">Fork me on GitHub</a>
+            </div>
+        </div>
 
-<div id="main">
+        <header class="header">
+                <div class="row">
+                    <div class="logo offset1 span4">
+                        <a href="#"><img src="img/logo.png" alt="Angel 2D" /></a>
+                    </div>
+                    <div class="header-element span7 pull-right">
+                        <a href="http://github.com/sjml/angel-engine" class="btn btn-inverse">GitHub</a>
+                        <a href="http://angel-engine.googlecode.com" class="btn btn-inverse">Google Code</a>
+                        <a href="http://docs.angel2d.com" class="btn btn-inverse">Documentation</a>
+                    </div>
+                </div>
+        </header>
 
-	<!-- HEADER -->
-	<div id="header" class="box">
+            <div class="hero-unit">
+                <div class="row">
+                    <div class="span5 offset1">
+                        <h3>A cross-platform 2D game prototyping framework based on OpenGL and C++</h3>
+                        <p>Angel balances the speed and flexibility of native code with an eye towards rapid iteration and out-of-the-box functionality. In a world of web games and memory-managed scripting engines, sometimes you still want to get your hands dirty &mdash; but that doesn't mean you have to get stuck in the mud.</p>
+                    </div>
+                    <div class="span5">
+                        <img class="hero-image" src="img/five-minute-logo.png"/>
+                    </div>
+                </div>
+            </div>
 
-		<p id="logo"><a href="./" title="[Go to homepage]"><img src="design/logo.png" alt="" /></a></p>
+        <div class="container">
 
-		<!-- NAVIGATION -->
-		<ul id="nav">
-			<li><a href="http://github.com/sjml/angel-engine"><span>GitHub</span></a></li>
-			<li><a href="http://angel-engine.googlecode.com"><span>Google Code</span></a></li>
-			<li><a href="http://docs.angel2d.com"><span>Docs (Web)</span></a></li>
-			<li><a href="http://code.google.com/p/angel-engine/downloads/detail?name=AngelDocs_3.0.1a.zip"><span>Docs (PDF)</span></a></li>
-			<li><a href="https://groups.google.com/forum/#!forum/angel-engine"><span>Discussion</span></a></li>
-		</ul>		
+            <!-- FEATURE SECTION 1 -->
+            <div class="row">
+                <div class="span4 offset1">
+                    <h2>Cross-Platform</h2>
+                    <img class="feature-image" src="img/platforms.png"/>
+                    <p>Angel can create games for <strong>Windows</strong>, the <strong>Mac</strong>, most flavors of <strong>Linux</strong>, and <strong>iOS</strong>. It uses the native build systems on each platform (Visual Studio, Xcode, Make), so you can be up and running as soon as possible.</p>
+                </div>
+                <div class="span4 offset1">
+                    <h2>Helpful and Agile</h2>
+                    <ul class="feature-list">
+                        <li>Angel was created with game jams in mind, so it's focused on providing as many convenient features as possible, but in a quickly understandable way. </li>
+                        <li>This way you spend more time on making your game, and less time getting third-party libraries working.</li>
+                    </ul>
+               </div>
+            </div>
+            <!-- /FEATURE SECTION 1 -->
 
-	</div> <!-- /header -->
+            <hr/>
 
-	<!-- WELCOME -->
-	<div id="welcome" class="box">
+            <!-- DOWNLOAD SECTION -->
+            <div class="downloads">
+                <div class="row">
+                    <div class="span11">
+                        <h2 class="section-label">Downloads</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 offset1">
+                        <a href="#"><img src="img/zip-universal.png"/></a>
+                        <p>Angel 3.1 Source Code</p><p>(All Platforms)</p>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img src="img/zip-universal.png"/></a>
+                        <p>Angel 3.1 Documentation</p><p>(PDF and HTML)</p>
+                    </div>
+                    <div class="span2 offset1">
+                        <a href="#"><img src="img/zip-windows.png"/></a>
+                        <p>Angel 3.1 Windows Demos</p>
+                    </div>
+                    <div class="span2">
+                        <a href="#"><img src="img/zip-mac.png"/></a>
+                        <p>Angel 3.1 Mac Demos</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /DOWNLOAD SECTION -->
 
-		<div id="welcome-inner">
+            <hr/>
 
-			<h2>A cross-platform 2D game prototyping framework based on OpenGL and C++</h2>
+            <!-- FEATURE SECTION 2 -->
+            <div class="row">
+                <div class="span5 offset1">
+                    <h3>Project Goals</h3>
+                    <ol class="project-goals">
+                        <li class="project-goal"><span class="goal-header">Provide all functionality in a quickly understandable way.</span>
+                            <ul>
+                                <li>We try to avoid overly complicated programming structures, even if that means sacrificing efficiency or, in some cases, functionality.</li>
+                                <li>As far down the stack as we can manage, the code is plainly written and thoroughly commented. We expect people to modify the core engine in the course of their work, so we've tried to make that a manageable thing.</li>
+                            </ul>
+                        </li>
+                        <li class="project-goal"><span class="goal-header">Provide as much functionality as possible.</span>
+                            <ul>
+                                <li>Angel was originally created (and is still used) as an engine for game jams, and the last thing you want to be doing in a jam context is debugging the pathfinding engine you had to cobble together.</li>
+                                <li>If there's something big you feel is missing from Angel, please send an email to <a href="http://groups.google.com/group/angel-engine">the discussion group</a>. We can't add every feature, obviously, but we want to at least make sure there's nothing we're forgetting.</li>
+                            </ul>
+                        </li>
+                        <li class="project-goal"><span class="goal-header">Allow an experienced developer to dive deeper.</span>
+                            <ul>
+                                <li>Given the first two points, we create a lot of wrappers around third-party libraries, but we always make it simple to access the raw capabilities of those libraries. So if you know what you're doing, you can be making direct OpenGL calls or manually affecting the Box2D physics simulation.</li>
+                                <li>In short, we strive to keep our code relatively shallow &mdash; it's always relatively easy to find the code doing the actual work, so you're not slugging through multiple levels of OO redirection.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="span5 angel-lightbox">
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/console.png" class="thumbnail">
+                        <img src="img/console_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/pathfinding.png" class="thumbnail">
+                        <img src="img/pathfinding_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="img/particles.png" class="thumbnail">
+                        <img src="img/particles_t.png" />
+                    </a>
+                </div>
+                <div id="angel-lightbox-carousel" class="lightbox hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="lightbox-header">
+                        <button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="lightbox-content">
+                        <div id="angel-carousel" class="carousel slide">
+                            <div class="carousel-inner">
+                            </div>
+                            <a href="#angel-carousel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+                            <a href="#angel-carousel" class="carousel-control right" data-slide="next">&rsaquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /FEATURE SECTION 2 -->
 
-			<p>Angel balances the speed and flexibility of native code with an eye towards rapid iteration and out-of-the-box functionality. In a world of web games and memory-managed scripting engines, sometimes you still want to get your hands dirty &mdash; but that doesn't mean you have to get stuck in the mud.</p>
+            <hr/>
 
-		</div> <!-- /welcome-inner -->
+            <footer>
+                <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013; <a href="http://www.softicons.com/free-icons/system-icons/archives-icons-by-cgink/zip-silver-icon">Original ZIP icon</a> by cgink</p>
+            </footer>
 
-		<div id="welcome-inset" class="box">
-			<img src="design/platforms-small.png" />
-			<p>Angel can create games for Windows, the Mac, most flavors of Linux, and iOS. It uses the native build systems on each platform (Visual Studio, Xcode, Make), so you can be up and running as soon as possible.
-			</p>
-		</div> 
+        </div> <!-- /container -->
 
-		<div id="header-img">
-			<img src="design/five-minute-logo.png" height="350"/>
-		</div> <!-- /header-img -->
-		
-	</div> <!-- /welcome -->
-	
-	<!-- COLUMNS -->
-	<div id="section" class="box">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/bootstrap-lightbox.min.js"></script>
+        <script src="js/main.js"></script>
 
-		<!-- CONTENT -->
-		<div id="content">
-
-			<h2 class="nom">Meet our products</h2>		
-			
-			<ul class="products">
-				<li class="box">
-					<div class="products-img"><img src="images/product-01.jpg" alt="" /></div>
-					<!-- Photo: (c) Nic McPhee -->
-					<div class="products-desc">
-						<h3><a href="#">Web Design</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquemi nisi nunc, aliquam quis sollicitudin in, malesuada lectus. Vivamuse sodales semper ultricies. Ut dui anteestem dignissim ac ornareget, sollicitudin a libero. Donec quis sem magna, a venenatis felisti.</p>
-					</div> <!-- /products-desc -->
-				</li>
-				<li class="box">
-					<div class="products-img"><img src="images/product-02.jpg" alt="" /></div>
-					<!-- Photo: (c) Emran Kassim -->
-					<div class="products-desc">
-						<h3><a href="#">Graphic Design</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquemi nisi nunc, aliquam quis sollicitudin in, malesuada lectus. Vivamuse sodales semper ultricies. Ut dui anteestem dignissim ac ornareget, sollicitudin a libero. Donec quis sem magna, a venenatis felisti.</p>
-					</div> <!-- /products-desc -->
-				</li>
-				<li class="last box">
-					<div class="products-img"><img src="images/product-03.jpg" alt="" /></div>
-					<!-- Photo: (c) Scott Robinson -->
-					<div class="products-desc">
-						<h3><a href="#">Corporate Identity</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquemi nisi nunc, aliquam quis sollicitudin in, malesuada lectus. Vivamuse sodales semper ultricies. Ut dui anteestem dignissim ac ornareget, sollicitudin a libero. Donec quis sem magna, a venenatis felisti.</p>
-					</div> <!-- /products-desc -->
-				</li>
-			</ul>
-		
-		</div> <!-- /content -->
-
-		<!-- SIDEBAR -->
-		<div id="aside">
-
-			<h2 class="nom">Example Games</h2>
-			
-			<ul class="articles">
-				<li>
-					<h3><a href="#">Proudly presents new version</a></h3>
-					<p class="date">Monday, October 27</p>
-					<p>Lorem ipsum dolor sit amet, consecti adipiscing elit. Aliquam feugiat aliquet elit in comod. Etiam pharetra consectetur velit vel dignissim. Duisem purus augue, ullamcorper et ultrices quis.</p>
-				</li>
-				<li>
-					<h3><a href="#">New products announced</a></h3>
-					<p class="date">Saturday, October 16</p>
-					<p>Lorem ipsum dolor sit amet, consecti adipiscing elit. Aliquam feugiat aliquet elit in comod. Etiam pharetra consectetur velit vel dignissim. Duisem purus augue, ullamcorper et ultrices quis.</p>
-				</li>
-				<li class="last">
-					<h3><a href="#">Portfolio was updated today</a></h3>
-					<p class="date">Thursday, September 13</p>
-					<p>Lorem ipsum dolor sit amet, consecti adipiscing elit. Aliquam feugiat aliquet elit in comod. Etiam pharetra consectetur velit vel dignissim. Duisem purus augue, ullamcorper et ultrices quis.</p>
-				</li>
-			</ul>
-		
-		</div> <!-- /aside -->
-
-	</div> <!-- /section -->
-
-	<!-- CONTACT -->
-	<div id="contact">
-
-		<address>
-			CompanyName <span>|</span>
-			<a href="#">www.example.com</a> <span>|</span>
-			<a href="mailto:example@example.com">example@example.com</a> <span>|</span>
-			Address: Street 123, New York, NY <span>|</span>
-			Phone: (012) 345-6789
-		</address>		
-
-	</div> <!-- /contact -->	
-	
-	<!-- FOOTER -->
-	<div id="footer" class="box">
-
-		<!-- Would you like to remove this line? Visit www.templatesdock.com/terms.php -->
-		<p class="f-right t-right"><a href="http://www.templatesdock.com/">Free web templates</a> by TemplatesDock<br /><span class="smaller">Tip: <a href="http://www.nuvio.cz/">Webdesign</a></span></p>
-		<!-- Would you like to remove this line? Visit www.templatesdock.com/terms.php -->
-	
-		<p class="f-left">Copyright &copy;&nbsp;2011 <a href="#">Bestfolio</a>, All Rights Reserved &reg;</p>
-
-	</div> <!-- /footer -->
-
-</div> <!-- /main -->
-
-<script type="text/javascript"> Cufon.now(); </script>
-
-</body>
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>
