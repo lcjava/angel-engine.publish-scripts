@@ -52,8 +52,11 @@ if not os.path.exists(SYNC_PATH):
     do_quietly(['hg', 'clone', REPO, SYNC_PATH])
     print "done."
 
-# build and grab IntroGame
+# Make sure none of the other processes have messed with us *too* much
 os.chdir(os.path.join(SYNC_PATH))
+do_quietly(['hg', 'revert', '-Ca'])
+
+# build and grab IntroGame
 do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
 shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", SAMPLES_DIR, "IntroGame"))
 

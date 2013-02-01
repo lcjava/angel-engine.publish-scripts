@@ -1,5 +1,5 @@
 {
-	"repository":"http://code.google.com/p/angel-engine/",
+	"repository":"~/Projects/angel-engine",
 	
 	"base_name":"Angel-",
 	"output_dir_name":"up",
