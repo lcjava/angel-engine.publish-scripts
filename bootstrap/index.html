@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/bootstrap-lightbox.min.css">
         <link rel="stylesheet" href="css/gh-fork-ribbon.css" />
         <!--[if IE]>
             <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css" />
@@ -24,7 +25,7 @@
     <body>
         <div class="github-fork-ribbon-wrapper right">
             <div class="github-fork-ribbon">
-                <a href="https://github.com/simonwhitaker/github-fork-ribbon-css">Fork me on GitHub</a>
+                <a href="https://github.com/sjml/angel-engine">Fork me on GitHub</a>
             </div>
         </div>
 
@@ -118,7 +119,7 @@
                         <li class="project-goal"><span class="goal-header">Provide as much functionality as possible.</span>
                             <ul>
                                 <li>Angel was originally created (and is still used) as an engine for game jams, and the last thing you want to be doing in a jam context is debugging the pathfinding engine you had to cobble together.</li>
-                                <li>If there's something big you feel is missing from Angel, please send an email to the discussion group. We can't add every feature, obviously, but we want to at least make sure there's nothing we're forgetting.</li>
+                                <li>If there's something big you feel is missing from Angel, please send an email to <a href="http://groups.google.com/group/angel-engine">the discussion group</a>. We can't add every feature, obviously, but we want to at least make sure there's nothing we're forgetting.</li>
                             </ul>
                         </li>
                         <li class="project-goal"><span class="goal-header">Allow an experienced developer to dive deeper.</span>
@@ -128,6 +129,30 @@
                             </ul>
                         </li>
                     </ol>
+                </div>
+                <div class="span5 angel-lightbox">
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="../site/images/console.png" class="thumbnail">
+                        <img src="../site/images/console_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="../site/images/pathfinding.png" class="thumbnail">
+                        <img src="../site/images/pathfinding_t.png" />
+                    </a>
+                    <a data-toggle="lightbox" href="#angel-lightbox-carousel" data-image="../site/images/particles.png" class="thumbnail">
+                        <img src="../site/images/particles_t.png" />
+                    </a>
+                </div>
+                <div id="angel-lightbox-carousel" class="lightbox hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="lightbox-header">
+                        <button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="lightbox-content">
+                        <div id="angel-carousel" class="carousel slide">
+                            <div class="carousel-inner">
+                            </div>
+                            <a href="#angel-carousel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+                            <a href="#angel-carousel" class="carousel-control right" data-slide="next">&rsaquo;</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /FEATURE SECTION 2 -->
@@ -142,9 +167,8 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
+        <script src="js/vendor/bootstrap-lightbox.min.js"></script>
         <script src="js/main.js"></script>
 
         <script>
