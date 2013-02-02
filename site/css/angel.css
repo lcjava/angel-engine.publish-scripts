@@ -12,6 +12,11 @@
   border-top-left-radius: 0px;
 }
 
+.hero-image {
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
 .feature-image {
   float: left;
   margin-right: 20px;
@@ -30,6 +35,16 @@
 
 .demo-spiel {
   margin-top: 2em;
+}
+
+@media (min-width: 980px) {
+  .hero-unit {
+    padding-bottom: 10px;
+  }
+  .hero-image {
+    margin-top: -20px;
+    margin-bottom: 0px;
+  }
 }
 
 @media (max-width: 979px) {
