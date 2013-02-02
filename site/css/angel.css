@@ -1,4 +1,57 @@
+.navbar .brand {
+  padding: 19px 20px 19px;
+  margin-left: 30px;
+}
 
+.hero-unit {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.feature-image {
+  float: left;
+  margin-right: 20px;
+  margin-left: -10px;
+}
+
+.section-label {
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.download-link p {
+  font-size: 110%;
+  text-align: center;
+}
+
+.demo-spiel {
+  margin-top: 2em;
+}
+
+@media (max-width: 979px) {
+  .github-fork-ribbon-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-unit {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .brand {
+    margin-left: 0px;
+  }
+}
+
+/*
 
 header {
   background-image: url("../img/background.png");
@@ -8,7 +61,7 @@ header {
 }
 
 header .logo {
-  /*padding: 2em 0 2em 0;*/
+  padding: 2em 0 2em 0;
 }
 
 .header-element a {
@@ -60,4 +113,4 @@ header .logo {
 
 .demo-spiel {
   text-align: left;
-}
+}*/
