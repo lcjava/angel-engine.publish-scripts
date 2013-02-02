@@ -34,7 +34,7 @@ config_data_file.close()
 config = json.loads(config_data)
 REPO = config["repository-windows"]
 
-OUTPUT_DIR = "Angel-%s-Samples-Windows" % (sys.argv[1])
+OUTPUT_DIR = "Angel-%s-DemoPack-Windows" % (sys.argv[1])
 START_DIR = os.getcwd()
 SAMPLE_BRANCHES = ["samples-1", "samples-2"]
 

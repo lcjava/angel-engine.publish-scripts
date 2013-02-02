@@ -37,7 +37,7 @@ config = json.loads(config_data)
 REPO = config["repository"]
 
 UPLOAD_DIR = config["output_dir_name"]
-SAMPLES_DIR = "Angel-%s-Samples-Mac" % (sys.argv[1])
+SAMPLES_DIR = "Angel-%s-DemoPack-Mac" % (sys.argv[1])
 SYNC_PATH = "Angel-" + sys.argv[1]
 START_DIR = os.getcwd()
 SAMPLE_BRANCHES = ["samples-1", "samples-2"]
