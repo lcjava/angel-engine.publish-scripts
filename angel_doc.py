@@ -6,6 +6,7 @@ import subprocess
 import time
 import json
 import math
+import shutil
 import markowik
 
 if (sys.platform[:3] == 'win'):
@@ -37,11 +38,20 @@ IGNORE = config["doc_ignore_paths"]
 PATH_TO_DOC = config["doc_data_path"]
 LOCAL_PATH_TO_DOC = config["local_doc_data_path"]
 
-# print os.path.join('..', config["output_dir_name"], config["doc_hosted_html_output_name"])
-# sys.exit(0)
 
 if not os.path.exists(config["output_dir_name"]):
     do_quietly(['mkdir', config["output_dir_name"]])
+
+# generate site
+print "Generating angel2d.com..."
+site_out = os.path.join(config["output_dir_name"], "angel2d.com")
+shutil.copytree("site", site_out, ignore=shutil.ignore_patterns(".DS_Store"))
+index_file = os.path.join(site_out, "index.html")
+with open(index_file, 'r') as index: index_text = index.read()
+index_text = index_text.replace("ANGEL_VER", str(sys.argv[1]))
+index = open(index_file, 'w')
+index.write(index_text)
+index.close()
 
 if not os.path.exists(FILENAME):
     print "Exporting code..."
@@ -49,6 +59,7 @@ if not os.path.exists(FILENAME):
     # do_quietly(['rm', '-rf', os.path.join(FILENAME, ".hg")])
 
 # create front page for Google Code page
+print "Generating Google Code front page..."
 with open(os.path.join(FILENAME, "README.markdown"), 'r') as readme_file: markdown_text = readme_file.read()
 
 insertion_marker = """
