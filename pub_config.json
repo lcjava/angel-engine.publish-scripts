@@ -5,12 +5,12 @@
 	"base_name":"Angel-",
 	"output_dir_name":"up",
 	"doc_base_name":"AngelDocs_",
-	"angel_path":"Angel",
+	"angel_path":"Code/Angel",
 	"doc_output":"angel-doc-exp",
 	"doc_ignore_paths": [
 		"Libraries/"
 	],
-	"doc_data_path":"Tools/BuildScripts/Doc/",
+	"doc_data_path":"Code/Tools/BuildScripts/Doc/",
 	"local_doc_data_path":"Tools/BuildScripts/Doc/",
 	"doxygen_replacements":
 	{
@@ -28,69 +28,5 @@
 		"GENERATE_LATEX         = YES": "GENERATE_LATEX = NO",
 		"../Tools/BuildScripts/Doc/footer.html": "../Tools/BuildScripts/Doc/footer_host.html"
 	},
-	"doc_html_replacements": {},
-	
-	"distros": {
-		"windows": {
-			"deletions": [
-				"GameJam-Mac.xcodeproj",
-				"GameJam-iOS.xcodeproj",
-				"README.Linux",
-				"Angel/nix-prereqs.sh",
-				"Angel/Libraries/angel-lua-build",
-				"Angel/Libraries/FMOD/lib/*.so*",
-				"Angel/Libraries/FMOD/*.dylib",
-				"Angel/Libraries/HID Utilities",
-				"Angel/Libraries/DevIL-SDK-1.7.8/mac",
-				"Angel/iOS",
-				"Tools/BuildScripts/Doc",
-				"Tools/BuildScripts/mac-specific",
-				"Tools/BuildScripts/publish_mac.lua",
-				"Tools/Mac360",
-				"IntroGame/Makefile",
-				"IntroGame/IntroGameInfo.plist",
-				"IntroGame/ios",
-				"ClientGame/Makefile",
-				"ClientGame/ClientGameInfo.plist",
-				"ClientGame/ios"
-			]
-		},
-		"mac": {
-			"deletions": [
-				"GameJam.sln",
-				"README.Linux",
-				"Angel/Libraries/angel-lua-build",
-				"Angel/Libraries/FMOD/*.dll",
-				"Angel/Libraries/FMOD/lib/*.so*",
-				"Angel/Libraries/FMOD/lib/",
-				"Angel/Libraries/DevIL-SDK-1.7.8/win",
-				"Tools/BuildScripts/publish.lua",
-				"Tools/swigwin-2.0.2",
-				"IntroGame/Makefile",
-				"IntroGame/IntroGame.vcproj",
-				"ClientGame/Makefile",
-				"ClientGame/ClientGame.vcproj"
-			]
-		},
-		"linux": {
-			"deletions": [
-				"GameJam.sln",
-				"GameJam.xcodeproj",
-				"Angel/Libraries/freetype-2.3.7",
-				"Angel/Libraries/FMOD/lib/*.lib",
-				"Angel/Libraries/FMOD/*.dll",
-				"Angel/Libraries/FMOD/*.dylib",
-				"Angel/Libraries/HID Utilities",
-				"Angel/Libraries/DevIL-SDK-1.7.8",
-				"Tools/BuildScripts/mac-specific",
-				"Tools/BuildScripts/publish.lua",
-				"Tools/BuildScripts/publish_mac.lua",
-				"Tools/swigwin-2.0.2",
-				"IntroGame/IntroGame.vcproj",
-				"IntroGame/IntroGameInfo.plist",
-				"ClientGame/ClientGame.vcproj",
-				"ClientGame/ClientGameInfo.plist"
-			]
-		}
-	}
+	"doc_html_replacements": {}
 }

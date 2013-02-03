@@ -36,26 +36,6 @@ if not os.path.exists(FILENAME):
     print "Exporting code..."
     do_quietly(['hg', 'clone', REPO, FILENAME])
 
-# make changes for various distros
-# print "Setting up distributions..."
-# for dist in config["distros"].iterkeys():
-#     print "\t" + dist.capitalize() + ":"
-#     dist_dir = FILENAME + "-" + dist
-#     # copy the trunk
-#     print "\t\tCopying..."
-#     do_quietly(['cp', '-R', FILENAME, dist_dir])
-#     os.chdir(dist_dir)
-#     # perform the deletions
-#     print "\t\tDeleting..."
-#     for deletion in config["distros"][dist]["deletions"]:
-#         do_quietly(['rm', '-rf', deletion])
-#     os.chdir("..")
-#     # zip it up, remove the original directory
-#     print "\t\tZipping..."
-#     do_quietly(['zip', '-r9', dist_dir + ".zip", dist_dir])
-#     print "\t\tCleaning..."
-#     do_quietly(['rm', '-rf', dist_dir])
-
 # zip, clean up original
 print "\tFull Distro:"
 print "\t\tZipping..."

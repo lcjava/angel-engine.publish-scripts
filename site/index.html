@@ -7,8 +7,9 @@
     <meta name="description" content="A cross-platform 2D game prototyping framework based on OpenGL and C++">
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
     <link rel="stylesheet" href="css/gh-fork-ribbon.css" />
     <!--[if IE]>
         <link rel="stylesheet" href="css/gh-fork-ribbon.ie.css" />
@@ -21,11 +22,11 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+                                   <link rel="shortcut icon" href="favicon.ico">
   </head>
 
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
@@ -37,7 +38,7 @@
       </div>
     </div>
 
-    <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar navbar-static-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -58,7 +59,6 @@
       </div>
     </div>
 
-    <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
       <div class="container">
         <div class="row">
@@ -70,7 +70,6 @@
                 <p>Angel balances the speed and flexibility of native code with an eye towards rapid iteration and out-of-the-box functionality. In a world of web games and memory-managed scripting engines, sometimes you still want to get your hands dirty &mdash; but that doesn't mean you have to get stuck in the mud.</p>
                 <p><a href="#downloads" class="btn btn-primary btn-large">Download &raquo;</a></p>
             </div>
-
         </div>
       </div>
     </div>
@@ -88,7 +87,8 @@
               <h2>Helpful and Agile</h2>
               <ul class="feature-list">
                   <li>Angel was created with game jams in mind, so it's focused on providing as many convenient features as possible, but in a quickly understandable way. </li>
-                  <li>This way you spend more time on making your game, and less time getting third-party libraries working.</li>
+                  <li>At the same time, we don't hide the actual code in a maze of data structures. The low-level code that Angel wraps is always just an easy click away, ready to be overridden or improved.</li>
+                  <li>We want you to spend more time actually making your game, and less time getting library features working.</li>
               </ul>
          </div>
       </div>
@@ -157,14 +157,14 @@
                   </li>
               </ol>
           </div>
-          <div class="angel-lightbox span5 offset1">
-              <a href="img/console.png">
+          <div class="angel-lightbox span5 offset1" data-toggle="modal-gallery" data-target="#modal-gallery">
+              <a href="img/console.png" title="Lua Console" data-gallery="gallery">
                   <img src="img/console_t.png" />
               </a>
-              <a href="img/pathfinding.png">
+              <a href="img/pathfinding.png" title="A* Pathfinding" data-gallery="gallery">
                   <img src="img/pathfinding_t.png" />
               </a>
-              <a href="img/particles.png">
+              <a href="img/particles.png" title="Particle Systems" data-gallery="gallery">
                   <img src="img/particles_t.png" />
               </a>
           </div>
@@ -175,14 +175,14 @@
 
       <!-- FEATURE SECTION 3 -->
       <div class="row">
-          <div class="angel-lightbox span5 offset1">
-              <a href="img/intervals.png">
+          <div class="angel-lightbox span4 offset2" data-toggle="modal-gallery" data-target="#modal-gallery">
+              <a href="img/intervals.png" title="Property interpolation over intervals" data-gallery="gallery">
                   <img src="img/intervals_t.png" />
               </a>
-              <a href="img/multitouch.png">
+              <a href="img/multitouch.png" title="Multitouch and Simulator" data-gallery="gallery">
                   <img src="img/multitouch_t.png" />
               </a>
-              <a href="http://placehold.it/1024x768">
+              <a href="http://placehold.it/1024x768" title="Placeholder" data-gallery="gallery">
                   <img src="http://placehold.it/300x225" />
               </a>
           </div>
@@ -201,15 +201,26 @@
       <hr/>
 
       <footer>
-          <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013; <a href="http://www.softicons.com/free-icons/system-icons/archives-icons-by-cgink/zip-silver-icon">Original ZIP icon</a> by cgink</p>
+          <p>&copy; <a href="http://shaneliesegang.com">Shane Liesegang</a> 2008-2013; <a href="http://www.softicons.com/free-icons/system-icons/archives-icons-by-cgink/zip-silver-icon">Original ZIP icon</a> by cgink; <a href="http://subtlepatterns.com/woven/">Woven pattern</a> by Max Rudberg</p>
       </footer>
 
     </div> <!-- /container -->
 
+    <!-- Image gallery container -->
+    <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3 class="modal-title"></h3>
+        </div>
+        <div class="modal-body"><div class="modal-image"></div></div>
+    </div>
+    <!-- /Image gallery container -->
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/bootstrap-lightbox.min.js"></script>
+    <script src="js/vendor/load-image.min.js"></script>
+    <script src="js/vendor/bootstrap-image-gallery.min.js"></script>
     <script src="js/main.js"></script>
 
     <script>

@@ -53,14 +53,14 @@ if not os.path.exists(SYNC_PATH):
     print "done."
 
 # Make sure none of the other processes have messed with us *too* much
-os.chdir(os.path.join(SYNC_PATH))
+os.chdir(os.path.join(SYNC_PATH, "Code"))
 do_quietly(['hg', 'revert', '-Ca'])
 
 # build and grab IntroGame
 zipdir("IntroGame", "IntroGame.zip")
 do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'IntroGame', '-configuration', 'Release'])
-shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", SAMPLES_DIR, "IntroGame"))
-shutil.move("IntroGame.zip", os.path.join("..", SAMPLES_DIR, "IntroGame", "IntroGame-source.zip"))
+shutil.move(os.path.join("IntroGame", "Published", "IntroGame"), os.path.join("..", "..", SAMPLES_DIR, "IntroGame"))
+shutil.move("IntroGame.zip", os.path.join("..", "..", SAMPLES_DIR, "IntroGame", "IntroGame-source.zip"))
 
 for sample in SAMPLE_BRANCHES:
     print "Building", sample
@@ -78,8 +78,8 @@ for sample in SAMPLE_BRANCHES:
     if '.DS_Store' in app_list: 
         app_list.remove('.DS_Store')
     app_name = app_list[0]
-    shutil.move(os.path.join("ClientGame", "Published", app_name), os.path.join("..", SAMPLES_DIR, app_name))
-    shutil.move("ClientGame.zip", os.path.join("..", SAMPLES_DIR, app_name, app_name + "-source.zip"))
+    shutil.move(os.path.join("ClientGame", "Published", app_name), os.path.join("..", "..", SAMPLES_DIR, app_name))
+    shutil.move("ClientGame.zip", os.path.join("..", "..", SAMPLES_DIR, app_name, app_name + "-source.zip"))
 
 
 os.chdir(START_DIR)
