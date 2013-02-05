@@ -11,19 +11,16 @@ $(document).ready(function() {
 	if (window.matchMedia && window.matchMedia(mediaQuery).matches)
 		isRetina = true;
 
-	$('noscript[data-large][data-small]').each(function(){
+	$('noscript[data-large][data-small]').each(function() {
 		var datums = $(this).data();
 		var src = isRetina ? datums['large'] : datums['small'];
 		delete datums['large'];
 		delete datums['small'];
 
 		var attrs = "";
-		for (var key in datums)
-		{
+		for (var key in datums) {
 			attrs += ' ' + key + '="' + datums[key] + '"';
 		}
-
-		//  alt="' + $(this).data('alt') + '"
 
 		$('<img src="' + src + '"' + attrs + ' />').insertAfter($(this));
 	});
