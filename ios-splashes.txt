@@ -1,0 +1,32 @@
+	Actor *a = new Actor();
+	a->SetSize(12.0f);
+	a->SetPosition(0.0f, -3.0f);
+	a->SetSprite("Resources/Images/angel.png");
+	theWorld.Add(a);
+	
+	int bigFontSize = 0;
+	int littleFontSize = 0;
+	int camWidth = theCamera.GetWindowWidth();
+	if (camWidth == 960 || camWidth == 1136)
+	{
+		//iphone
+		bigFontSize = 36;
+		littleFontSize = 24;
+	}
+	else 
+	{
+		//ipad
+		bigFontSize = 72;
+		littleFontSize = 36;
+	}
+	
+	RegisterFont("Resources/Fonts/Inconsolata.otf", bigFontSize, "BigConsole");
+	TextActor *t = new TextActor("BigConsole", "Angel Prototyping Engine", TXT_Center);
+	t->SetPosition(0.0f, 7.0f);
+	theWorld.Add(t);
+	
+	RegisterFont("Resources/Fonts/Inconsolata.otf", littleFontSize, "LittleConsole");
+	t = new TextActor("LittleConsole", "http://angel2d.com", TXT_Center);
+	t->SetPosition(0.0f, 5.0f);
+	theWorld.Add(t);
+	
