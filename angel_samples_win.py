@@ -36,7 +36,7 @@ REPO = config["repository-windows"]
 
 OUTPUT_DIR = "Angel-%s-DemoPack-Windows" % (sys.argv[1])
 START_DIR = os.getcwd()
-SAMPLE_BRANCHES = ["samples-1", "samples-2"]
+SAMPLE_BRANCHES = ["samples-1", "samples-2", "samples-3"]
 
 
 if not os.path.exists('windows-angel'):

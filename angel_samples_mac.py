@@ -40,7 +40,7 @@ UPLOAD_DIR = config["output_dir_name"]
 SAMPLES_DIR = "Angel-%s-DemoPack-Mac" % (sys.argv[1])
 SYNC_PATH = "Angel-" + sys.argv[1]
 START_DIR = os.getcwd()
-SAMPLE_BRANCHES = ["samples-1", "samples-2"]
+SAMPLE_BRANCHES = ["samples-1", "samples-2", "samples-3"]
 
 
 for dir_check in [UPLOAD_DIR, SAMPLES_DIR]:
@@ -70,7 +70,7 @@ for sample in SAMPLE_BRANCHES:
     shutil.rmtree(os.path.join("ClientGame", "platforms", "ios")) 
     shutil.rmtree(os.path.join("ClientGame", "platforms", "win")) 
     shutil.rmtree(os.path.join("ClientGame", "ClientGame-iOS.xcodeproj"))
-    os.remove(os.path.join("ClientGame", "ClientGame.vcproj"))
+    os.remove(os.path.join("ClientGame", "ClientGame.vcxproj"))
     os.remove(os.path.join("ClientGame", "Makefile"))
     zipdir("ClientGame", "ClientGame.zip")
     do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'ClientGame', '-configuration', 'Release'])
