@@ -83,7 +83,7 @@ screenshots_text = """
 Screenshots
 -----------
 Some screenshots of the demo application."""
-for shot_type in ["Console", "Intervals", "Multitouch", "Particles", "Pathfinding"]:
+for shot_type in ["Console", "Intervals", "Pretty_Scene", "Multitouch", "Particles", "Spaaaaace", "Pathfinding", "GWEN", "SuperDude"]:
     screenshots_text += "\n\n**%s**\n\n[![%s](http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png)](http://wiki.angel-engine.googlecode.com/hg/images/%s.png)]" % (shot_type, shot_type, shot_type.lower(), shot_type.lower())
 
 markdown_text = markdown_text.replace(insertion_marker, screenshots_text + downloads_text + insertion_marker)
