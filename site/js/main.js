@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	// set images up for swap if we're on a retina device
 	var isRetina = false;
 	var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
 			  (min--moz-device-pixel-ratio: 1.5),\
@@ -24,4 +25,5 @@ $(document).ready(function() {
 
 		$('<img src="' + src + '"' + attrs + ' />').insertAfter($(this));
 	});
+	// \retina swap
 });
