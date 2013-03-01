@@ -73,18 +73,18 @@ Downloads
 ---------
 * **[Angel %s](http://angel-engine.googlecode.com/files/Angel-%s.zip)**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
 * **[Angel Documentation](http://angel-engine.googlecode.com/files/AngelDocs_%s.zip)**: The generated documentation from the %s codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
-* **IntroGame**: Compiled versions of the example code, which shows off basic functionality. All the code is well-commented and modular, so you can download the source (above) and see how each example is implemented.
-    * [Windows IntroGame](http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Windows.zip)
-    * [Mac IntroGame](http://angel-engine.googlecode.com/files/Angel-%s-IntroGame-Mac.zip)"""
-downloads_text = downloads_text % (sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1], sys.argv[1])
+* **DemoPack**: The demo packs include a basic platformer, a nostalgic space-rock-shooting game, a pretty scene, and a copy of IntroGame, which shows off most engine features in a sequence of descriptive screens. All demos include their source code, so if you're curious about how to do something you see here, have a look!
+    * [Windows DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Windows.zip)
+    * [Mac DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Mac.zip)"""
+downloads_text = downloads_text % list(sys.argv[1] for i in range(6))
 
 screenshots_text = """
 
 Screenshots
 -----------
 Some screenshots of the demo application."""
-for shot_type in ["Console", "Intervals", "Pretty_Scene", "Multitouch", "Particles", "Spaaaaace", "Pathfinding", "GWEN", "SuperDude"]:
-    screenshots_text += "\n\n**%s**\n\n[![%s](http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png)](http://wiki.angel-engine.googlecode.com/hg/images/%s.png)]" % (shot_type, shot_type, shot_type.lower(), shot_type.lower())
+for shot_type in ["Console", "Intervals", "Pretty Scene", "Multitouch", "Particles", "Spaaaaace", "Pathfinding", "GWEN", "SuperDude"]:
+    screenshots_text += "\n\n**%s**\n\n[![%s](http://wiki.angel-engine.googlecode.com/hg/images/%s_t.png)](http://wiki.angel-engine.googlecode.com/hg/images/%s.png)]" % (shot_type, shot_type, shot_type.replace(" ", "_").lower(), shot_type.replace(" ", "_").lower())
 
 markdown_text = markdown_text.replace(insertion_marker, screenshots_text + downloads_text + insertion_marker)
 
