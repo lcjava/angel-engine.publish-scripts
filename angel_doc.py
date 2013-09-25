@@ -76,7 +76,7 @@ Downloads
 * **DemoPack**: The demo packs include a basic platformer, a nostalgic space-rock-shooting game, a pretty scene, and a copy of IntroGame, which shows off most engine features in a sequence of descriptive screens. All demos include their source code, so if you're curious about how to do something you see here, have a look!
     * [Windows DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Windows.zip)
     * [Mac DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Mac.zip)"""
-downloads_text = downloads_text % list(sys.argv[1] for i in range(6))
+downloads_text = downloads_text % tuple(sys.argv[1] for i in range(6))
 
 screenshots_text = """
 
