@@ -10,7 +10,7 @@ if [%1]==[] (
 )
 
 set OLDDIR=%CD%
-cd C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
+cd C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin
 CALL vcvars32.bat
 chdir /d %OLDDIR%
 python angel_samples_win.py %VERS%
