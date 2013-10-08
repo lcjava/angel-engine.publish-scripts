@@ -1,0 +1,32 @@
+{
+	"repository":"~/Projects/angel-engine",
+	"repository-windows":"C:\\Projects\\angel-engine",
+	
+	"base_name":"Angel-",
+	"output_dir_name":"up",
+	"doc_base_name":"AngelDocs_",
+	"angel_path":"Code/Angel",
+	"doc_output":"angel-doc-exp",
+	"doc_ignore_paths": [
+		"Libraries/"
+	],
+	"doc_data_path":"Code/Tools/BuildScripts/Doc/",
+	"local_doc_data_path":"Tools/BuildScripts/Doc/",
+	"doxygen_replacements":
+	{
+		"doxygen.sty":
+		{
+			"orig":"Generated on",
+			"new":"Angel licensed under a \\href{http://creativecommons.org/licenses/BSD/}{BSD-style license}; Documentation licensed under \\href{http://creativecommons.org/licenses/by-sa/3.0/us/}{Creative Commons Attribution-Share Alike 3.0 United States License}; Generated on"
+		}
+	},
+	"doc_pdf_output_name":"AngelDocumentation.pdf",
+	"doc_html_output_name":"AngelDocumentation.html",
+	"doc_hosted_html_output_name":"docs_for_upload",
+	"doc_html_contents":"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><html><head><title>Angel Documentation</title><meta http-equiv=\"REFRESH\" content=\"0;url=./html/index.html\"></head><body>Redirecting...</body></html>",
+	"doc_hosted_html_replacements": {
+		"GENERATE_LATEX         = YES": "GENERATE_LATEX = NO",
+		"../Tools/BuildScripts/Doc/footer.html": "../Tools/BuildScripts/Doc/footer_host.html"
+	},
+	"doc_html_replacements": {}
+}
