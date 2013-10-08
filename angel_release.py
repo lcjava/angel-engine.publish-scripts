@@ -20,4 +20,5 @@ for script in scripts:
 os.chdir("up")
 for filename in files:
     f = filename % (sys.argv[1])
-    shutil.move(f, os.path.join(download_dir, f))
+    if os.path.exists(f):
+        shutil.move(f, os.path.join(download_dir, f))
