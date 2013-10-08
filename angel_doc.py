@@ -71,11 +71,11 @@ downloads_text = """
 
 Downloads
 ---------
-* **[Angel %s](http://angel-engine.googlecode.com/files/Angel-%s.zip)**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
-* **[Angel Documentation](http://angel-engine.googlecode.com/files/AngelDocs_%s.zip)**: The generated documentation from the %s codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
+* **[Angel %s](http://angel2d.com/downloads/Angel-%s.zip)**: Our active development branch, which runs on Windows, Mac OS X, iOS, and Linux.
+* **[Angel Documentation](http://angel2d.com/downloads/AngelDocs_%s.zip)**: The generated documentation from the %s codebase, linked above. Contains HTML and PDF versions for maximal offline viewing enjoyment. 
 * **DemoPack**: The demo packs include a basic platformer, a nostalgic space-rock-shooting game, a pretty scene, and a copy of IntroGame, which shows off most engine features in a sequence of descriptive screens. All demos include their source code, so if you're curious about how to do something you see here, have a look!
-    * [Windows DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Windows.zip)
-    * [Mac DemoPack](http://angel-engine.googlecode.com/files/Angel-%s-DemoPack-Mac.zip)"""
+    * [Windows DemoPack](http://angel2d.com/downloads/Angel-%s-DemoPack-Windows.zip)
+    * [Mac DemoPack](http://angel2d.com/downloads/Angel-%s-DemoPack-Mac.zip)"""
 downloads_text = downloads_text % tuple(sys.argv[1] for i in range(6))
 
 screenshots_text = """
