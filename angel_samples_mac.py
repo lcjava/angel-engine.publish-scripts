@@ -73,7 +73,7 @@ for sample in SAMPLE_BRANCHES:
     os.remove(os.path.join("ClientGame", "ClientGame.vcxproj"))
     os.remove(os.path.join("ClientGame", "Makefile"))
     zipdir("ClientGame", "ClientGame.zip")
-    do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'ClientGame', '-configuration', 'Release'])
+    do_quietly(['xcodebuild', '-workspace', 'GameJam-Mac.xcworkspace', '-scheme', 'ClientGame', '-configuration', 'Release', '-sdk', 'macosx10.8'])
     app_list = os.listdir(os.path.join("ClientGame", "Published"))
     if '.DS_Store' in app_list: 
         app_list.remove('.DS_Store')
